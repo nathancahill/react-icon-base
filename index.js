@@ -1,4 +1,4 @@
-import { default as React, PropTypes } from 'react'
+import React from 'react'
 
 const IconBase = ({ children, color, size, style, ...props }, { reactIconBase = {} }) => {
   const computedSize = size || reactIconBase.size || '1em'
@@ -22,16 +22,16 @@ const IconBase = ({ children, color, size, style, ...props }, { reactIconBase = 
 }
 
 IconBase.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
+  color: React.PropTypes.string,
+  size: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
   ]),
-  style: PropTypes.object
+  style: React.PropTypes.object
 }
 
 IconBase.contextTypes = {
-  reactIconBase: PropTypes.shape(IconBase.propTypes)
+  reactIconBase: React.PropTypes.shape(IconBase.propTypes)
 }
 
 export default IconBase
